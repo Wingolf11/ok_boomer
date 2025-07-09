@@ -14,7 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $myquery->get_result();
 
     if ($user = $result->fetch_assoc()) {
-        if (password_verify($password, $user['PW'])) {
+        if ($password === $user['PW']) {
+            $_SESSION['id_user'] = $user['id_user'];
             $_SESSION['login'] = $user['login'];
             header("Location: dashboard.php");
             exit;
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <form method="post">
                     <label for="login">Indentifiant: </label>
-                    <input type="text" id="login" name="login" placeholder="Indentifiant" mamaxlength="20" required>
+                    <input type="text" id="login" name="login" placeholder="Indentifiant" maxlength="20" required>
                     
                     <br>
                     <br>

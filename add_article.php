@@ -4,14 +4,14 @@ require 'data_b.php';
 
 header('Content-Type: application/json');
 
-// Check if the user is logged in
+/*// Check if the user is logged in
 if (!isset($_SESSION['id_user'])) {
     echo json_encode([
         'success' => false,
         'message' => 'Vous devez être connecté pour ajouter un article.'
     ]);
     exit;
-}
+}*/
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode([

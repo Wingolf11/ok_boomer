@@ -28,12 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($role = $role_result->fetch_assoc()) {
             $role_id = $role['id_role'];
             
-            // Hash password
-            $hashed_pw = password_hash($password, PASSWORD_DEFAULT);
-
             // Insert user
             $stmt = $conn->prepare("INSERT INTO users (login, PW, id_role, create_at) VALUES (?, ?, ?, NOW())");
-            $stmt->bind_param('ssi', $login, $hashed_pw, $role_id);
+            $stmt->bind_param('ssi', $login, $password, $role_id);
 
             if ($stmt->execute()) {
                 header("Location: login.php");
