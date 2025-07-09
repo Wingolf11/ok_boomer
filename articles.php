@@ -1,11 +1,12 @@
 <?php
 require 'data_b.php';
 
-$sql = "SELECT a.id_article, a.titre, a.date, a.photo, a.texte, u.login 
-        FROM articles a 
-        JOIN users u ON a.id_user = u.id_user 
-        ORDER BY a.date DESC";
-$result = $conn->query($sql);
+$stmt = $conn->prepare("SELECT a.id_article, a.titre, a.date, a.photo, a.texte, u.login 
+                        FROM articles a 
+                        JOIN users u ON a.id_user = u.id_user 
+                        ORDER BY a.date DESC");
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0):
     while ($row = $result->fetch_assoc()):
