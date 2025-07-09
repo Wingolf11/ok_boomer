@@ -10,6 +10,7 @@
     <body>
         <header>
             <nav class= "nav_btns">
+                <a href="add_article.php" class="button">Ajouter un article</a>
                 <a href="login.php" class="button">S'identifier</a>
                 <a href="signup.php" class="button btn-black">Créer un utilisateur</a>
             </nav>
@@ -21,11 +22,11 @@
                 <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
             </div>
         </header>
-        <section class="list_art">
-            <?php include 'articles.php'; ?>
+        <section class="list_art" id="article-container"> 
         </section>
         <footer>
             <p>&copy; 2025 Ok Boomer</p>
         </footer>
+        <script src="articles.js" defer></script>
     </body>
 </html>
