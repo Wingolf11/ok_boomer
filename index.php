@@ -10,7 +10,7 @@
     <body>
         <header>
             <nav class= "nav_btns">
-                <a href="add_article.php" class="button">Ajouter un article</a>
+                <a href="add_article_form.php" class="button">Ajouter un article</a>
                 <a href="login.php" class="button">S'identifier</a>
                 <a href="signup.php" class="button btn-black">Créer un utilisateur</a>
             </nav>
