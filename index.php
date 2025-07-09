@@ -9,26 +9,16 @@
     </head>
     <body>
         <header>
-            <nav class= nav_btns>
-                <ul>
-                    <li>
-                        <a href="login.php" title="S'identifier" class="button">
-                            <div class="button2">S'identifier</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="signup.php" title="Créer un utilisateur" class="button btn-black">
-                            <div class="button2">Créer un utilisateur</div>
-                        </a>
-                    </li>
-                </ul>
+            <nav class= "nav_btns">
+                <a href="login.php" class="button">S'identifier</a>
+                <a href="signup.php" class="button btn-black">Créer un utilisateur</a>
             </nav>
             <div class="header_img">
                 <img src="uploads/header_img.jpg" alt="Header Image">
             </div>
             <div class="welcome">
                 <h1>Ok Boomer!</h1> 
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
+                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
             </div>
         </header>
         <section class="list_art">
