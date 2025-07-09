@@ -6,6 +6,9 @@
     later anyways.
 
 4. the login is up now we will continue to the signup file. 
+5. The signup file will redirect to dashboard, a secure / private page.
+    The index.php  will be our home page. 
+6. php uses assosiatives arrays contrary to C which are indexed arrays.  
 
 
 

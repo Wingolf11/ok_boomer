@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['login']);
     $password = $_POST['PW'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE login = ?");
-    $stmt->bind_param('s', $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $myquery = $conn->prepare("SELECT * FROM users WHERE login = ?");
+    $myquery->bind_param('s', $username);
+    $myquery->execute();
+    $result = $myquery->get_result();
 
     if ($user = $result->fetch_assoc()) {
         if (password_verify($password, $user['PW'])) {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Connexion</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style/login_style.css" />
     </head>
     <body>
         <section id="log_form">
@@ -61,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <br>
                     <br>
 
-                    <button type="submit" name="sub">S'identifier</button>
-                    <a href="signup.php" class="secondary_btn" target=self>Créer un compte</a>
+                    <button type="submit" name="sub" id="login_btn">S'identifier</button>
                 </form>
+                <a href="signup.php" class="signup_btn"><button id="signup_btn">Créer un compte</button></a>
             </div>
         </section>
     </body>
