@@ -1,0 +1,31 @@
+1. Install XAMPP: start apache and sql
+2. Create data base and stablish relationships
+3. Build in paralel:
+    My approach is to build the login and connection first. 
+    This is new so i wanted to try this first. I am trying the mvc layout too as I'll do it
+    later anyways.
+
+4. the login is up now we will continue to the signup file. 
+
+
+
+Posible mvc layout:
+
+/project-root
+│
+├── /models
+│     └── User.php             <-- User data, DB queries
+│
+├── /views
+│     └── login.php            <-- HTML + PHP to render form & errors
+│
+├── /controllers
+│     └── AuthController.php  <-- Logic to process login form
+│
+├── /public
+│     └── index.php            <-- Front controller (single entry point)
+│
+├── /config
+│     └── db.php               <-- DB connection
+│
+└── .htaccess                  <-- URL rewriting (optional)

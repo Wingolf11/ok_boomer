@@ -1,0 +1,13 @@
+#log_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-message {
+    color:red;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
