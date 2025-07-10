@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("i", $id_article);
 
     if ($stmt->execute()) {
-        header("Location: index.php"); // or display.php or wherever you show articles
+        header("Location: dashboard.php");
         exit;
     } else {
         echo "Erreur lors de la suppression : " . $stmt->error;

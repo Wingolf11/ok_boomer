@@ -2,7 +2,6 @@
 session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -47,7 +46,7 @@ session_start();
     <div class="modal" id="articleModal">
       <span class="close-btn">&times;</span>
       <h2>Ajouter un article</h2>
-      <form action="add_article.php" method="post" enctype="multipart/form-data">
+      <form action="add_article_dashboard.php" method="post" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="Titre" required>
         <textarea name="texte" placeholder="Contenu de l'article" required></textarea>
         <label for="photo" id="photo label">Choisissez un fichier:</label>

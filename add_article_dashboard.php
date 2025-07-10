@@ -1,10 +1,11 @@
 <?php
+session_start();
 require 'config/data_b.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titre = trim($_POST['titre']);
     $texte = trim($_POST['texte']);
-    $id_user = 1; // Fixed user ID
+    $id_user = $_SESSION['id_user']; // Fixed user ID
     $date = date('Y-m-d H:i:s');
 
     // Predetermined photo path (replace with your actual default image)
