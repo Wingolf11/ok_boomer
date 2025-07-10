@@ -17,7 +17,7 @@ session_start();
     <nav class="nav_btns">
       <button class="button" data-modal="articleModal">Ajouter un article</button>
       
-      <form action="log_out.php" method="post">
+      <form action="handlers/log_out.php" method="post">
       <button type="submit" id="log_out">X</button>
       </form>
       
@@ -45,7 +45,7 @@ session_start();
             </div>
         </header>
         <section class="list_art" id="article-container">
-          <?php include 'display_art.php'; ?>
+          <?php include 'display/display_art.php'; ?>
         </section>
 
         <footer>
@@ -57,7 +57,7 @@ session_start();
     <div class="modal" id="articleModal">
       <span class="close-btn">&times;</span>
       <h2>Ajouter un article</h2>
-      <form action="add_article_dashboard.php" method="post" enctype="multipart/form-data">
+      <form action="handlers/add_article_dashboard.php" method="post" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="Titre" required>
         <textarea name="texte" placeholder="Contenu de l'article" required></textarea>
         <label for="photo" id="photo label">Choisissez un fichier:</label>
@@ -69,7 +69,7 @@ session_start();
     <div class="modal" id="loginModal">
       <span class="close-btn">&times;</span>
       <h2>Connexion</h2>
-      <form action="login.php" method="post">
+      <form action="handlers/login.php" method="post">
         <input type="text" name="login" placeholder="Nom d'utilisateur" required>
         <input type="password" name="PW" placeholder="Mot de passe" required>
         <button type="submit">Se connecter</button>
@@ -79,7 +79,7 @@ session_start();
     <div class="modal" id="signupModal">
       <span class="close-btn">&times;</span>
       <h2>Créer un utilisateur</h2>
-      <form action="signup.php" method="post">
+      <form action="handlers/signup.php" method="post">
         <input type="text" name="login" placeholder="Nom d'utilisateur" required>
         <input type="password" name="PW" placeholder="Mot de passe" required>
         <select id="libelle_role" name="libelle_role" required>
@@ -95,7 +95,7 @@ session_start();
     <div class="modal" id="userlistmodal">
       <span class="close-btn">&times;</span>
       <h2>Supprimer un utilisateur</h2>
-      <?php include 'display_users.php'; ?>
+      <?php include 'display/display_users.php'; ?>
     </div>
   </div>
 

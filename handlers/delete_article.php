@@ -1,5 +1,5 @@
 <?php
-require 'config/data_b.php';
+require '../config/data_b.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_article = intval($_POST['id_article']);
@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("i", $id_article);
 
     if ($stmt->execute()) {
-        header("Location: dashboard.php");
+        header("Location: ../dashboard.php");
         exit;
     } else {
         echo "Erreur lors de la suppression : " . $stmt->error;

@@ -7,9 +7,9 @@ $sessionUserRole = $_SESSION['role'] ?? null;
 
 // Prepare and execute query
 $myquery = $conn->prepare("
-    SELECT users.*, roles.libelle_role
-    FROM users 
-    JOIN roles ON users.id_role = roles.id_role
+    SELECT articles.*, users.login 
+    FROM articles 
+    JOIN users ON articles.id_user = users.id_user
 ");
 $myquery->execute();
 $result = $myquery->get_result();
@@ -19,24 +19,28 @@ if (!$result) {
 }
 
 // Display results
-echo "<table class='table' border='1' cellpadding='5' cellspacing='0'>";
+echo "<table class='table' cellpadding='5' cellspacing='0'>";
 while ($row = $result->fetch_assoc()) {
     echo "<tr>
-        <td>" . htmlspecialchars($row['login']) . "</td>
-        <td>" . nl2br(htmlspecialchars($row['id_role'])) . "</td>
-        <td>" . htmlspecialchars($row['create_at']) . "</td>" ;
+        <td><img src='" . htmlspecialchars($row['photo']) . "' alt='Photo' width='200'></td>
+        <td>" . htmlspecialchars($row['titre']) . "</td>
+        <td>" . nl2br(htmlspecialchars($row['texte'])) . "</td>
+        <td>" . htmlspecialchars($row['date']) . "</td>
+        <td>" . htmlspecialchars($row['login']) . "</td>";
 
     // Check role-based delete permission
     $canDelete = false;
 
     if ($sessionUserRole === 'superadmin' || $sessionUserRole === 'admin') {
         $canDelete = true;
+    } elseif ($sessionUserRole === 'editeur' && $sessionUserId == $row['id_user']) {
+        $canDelete = true;
     }
 
     if ($canDelete) {
         echo "<td>
-                <form method='post' action='delete_user.php' onsubmit='return confirm(\"Supprimer cet utilisateur ?\");'>
-                    <input type='hidden' name='id_user' value='" . $row['id_user'] . "'>
+                <form method='post' action='handlers/delete_article.php' onsubmit='return confirm(\"Supprimer cet article ?\");'>
+                    <input type='hidden' name='id_article' value='" . $row['id_article'] . "'>
                     <button type='submit' class='delete-btn'>Supprimer</button>
                 </form>
               </td>";

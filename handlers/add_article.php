@@ -1,14 +1,13 @@
 <?php
-session_start();
-require 'config/data_b.php';
+require '../config/data_b.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titre = trim($_POST['titre']);
     $texte = trim($_POST['texte']);
-    $id_user = $_SESSION['id_user'];
+    $id_user = 1; // Fixed user ID
     $date = date('Y-m-d H:i:s');
 
-    // Predetermined photo path
+    // Predetermined photo path (replace with your actual default image)
     $photoPath = 'uploads/header_img.jpg';
 
     // Insert into DB
@@ -16,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssssi", $titre, $date, $photoPath, $texte, $id_user);
 
     if ($stmt->execute()) {
-        header("Location: dashboard.php");       
+        header("Location: index.php");       
     } else {
         echo "Erreur lors de l'ajout : " . $stmt->error;
     }

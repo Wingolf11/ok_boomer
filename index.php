@@ -24,7 +24,7 @@
             </div>
         </header>
         <section class="list_art" id="article-container">
-          <?php include 'display_art.php'; ?>
+          <?php include 'display/display_art.php'; ?>
         </section>
 
         <footer>
@@ -36,7 +36,7 @@
     <div class="modal" id="articleModal">
       <span class="close-btn">&times;</span>
       <h2>Ajouter un article</h2>
-      <form action="add_article.php" method="post" enctype="multipart/form-data">
+      <form action="handlers/add_article.php" method="post" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="Titre" required>
         <textarea name="texte" placeholder="Contenu de l'article" required></textarea>
         <label for="photo" id="photo label">Choisissez un fichier:</label>
@@ -48,7 +48,7 @@
     <div class="modal" id="loginModal">
       <span class="close-btn">&times;</span>
       <h2>Connexion</h2>
-      <form action="login.php" method="post">
+      <form action="handlers/login.php" method="post">
         <input type="text" name="login" placeholder="Nom d'utilisateur" required>
         <input type="password" name="PW" placeholder="Mot de passe" required>
         <button type="submit">Se connecter</button>

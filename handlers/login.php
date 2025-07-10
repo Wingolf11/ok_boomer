@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'config/data_b.php';
+require '../config/data_b.php';
 
 $error = '';
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['id_role'] = $user['id_role'];
             $_SESSION['role'] = $user['libelle_role'];
 
-            header("Location: dashboard.php");
+            header("Location: ../dashboard.php");
             exit;
         } else {
             $error = "Mot de passe incorrect.";
