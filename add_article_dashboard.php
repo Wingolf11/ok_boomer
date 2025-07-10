@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssssi", $titre, $date, $photoPath, $texte, $id_user);
 
     if ($stmt->execute()) {
-        header("Location: index.php");       
+        header("Location: dashboard.php");       
     } else {
         echo "Erreur lors de l'ajout : " . $stmt->error;
     }

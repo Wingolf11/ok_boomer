@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bind_param('ssi', $login, $password, $role_id);
 
             if ($stmt->execute()) {
-                header("Location: login.php");
+                header("Location: index.php");
                 exit;
             } else {
                 $error = "Une erreur est survenue lors de l'inscription.";

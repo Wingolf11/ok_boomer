@@ -3,7 +3,8 @@ session_start();
 require 'config/data_b.php';
 
 // Make sure user is logged in
-$sessionUserId = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : null;
+$sessionUserId = $_SESSION['id_user'] ?? null;
+$sessionUserRole = $_SESSION['role'] ?? null;
 
 // Prepare and execute query
 $myquery = $conn->prepare("
@@ -11,11 +12,9 @@ $myquery = $conn->prepare("
     FROM articles 
     JOIN users ON articles.id_user = users.id_user
 ");
-
 $myquery->execute();
 $result = $myquery->get_result();
 
-// Check for query failure
 if (!$result) {
     die('Erreur lors de la requête : ' . $conn->error);
 }
@@ -30,7 +29,16 @@ while ($row = $result->fetch_assoc()) {
         <td>" . htmlspecialchars($row['date']) . "</td>
         <td>" . htmlspecialchars($row['login']) . "</td>";
 
-    if ($sessionUserId && $sessionUserId == $row['id_user']) {
+    // Check role-based delete permission
+    $canDelete = false;
+
+    if ($sessionUserRole === 'superadmin' || $sessionUserRole === 'admin') {
+        $canDelete = true;
+    } elseif ($sessionUserRole === 'editeur' && $sessionUserId == $row['id_user']) {
+        $canDelete = true;
+    }
+
+    if ($canDelete) {
         echo "<td>
                 <form method='post' action='delete_article.php' onsubmit='return confirm(\"Supprimer cet article ?\");'>
                     <input type='hidden' name='id_article' value='" . $row['id_article'] . "'>
@@ -48,3 +56,4 @@ echo "</table>";
 $myquery->close();
 $conn->close();
 ?>
+
