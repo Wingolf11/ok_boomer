@@ -13,7 +13,6 @@
     <nav class="nav_btns">
       <button class="button" data-modal="articleModal">Ajouter un article</button>
       <button class="button" data-modal="loginModal">S'identifier</button>
-      <button class="button btn-black" data-modal="signupModal">Créer un utilisateur</button>
     </nav>
   </header>
   <div class="header_img">
@@ -53,23 +52,6 @@
         <input type="text" name="login" placeholder="Nom d'utilisateur" required>
         <input type="password" name="PW" placeholder="Mot de passe" required>
         <button type="submit">Se connecter</button>
-      </form>
-    </div>
-
-    <div class="modal" id="signupModal">
-      <span class="close-btn">&times;</span>
-      <h2>Créer un utilisateur</h2>
-      <form action="signup.php" method="post">
-        <input type="text" name="login" placeholder="Nom d'utilisateur" required>
-        <input type="password" name="PW" placeholder="Mot de passe" required>
-        <select id="libelle_role" name="libelle_role" required>
-            <option valuer="" selected>Choisissez un rôle</option>
-            <option value="superadmin">Super admin</option>
-            <option value="admin">Admin</option>
-            <option value="editeur">Editeur</option>
-            <option value="lecteur">Lecteur</option>
-        </select>
-        <button type="submit">S'inscrire</button>
       </form>
     </div>
   </div>

@@ -22,7 +22,12 @@ session_start();
       </form>
       
       <button class="button" data-modal="loginModal">S'identifier</button>
-      <button class="button btn-black" data-modal="signupModal">Créer un utilisateur</button>
+      <?php
+      if(isset($_SESSION['role']) && $_SESSION['role'] === 'superadmin')
+        echo "<td>
+              <button class='button btn-black' data-modal='signupModal'>Créer un utilisateur</button>
+              </td>";
+      ?>
       <?php
       if(isset($_SESSION['role']) && $_SESSION['role'] === 'superadmin')
         echo "<td>
