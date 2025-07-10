@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +18,12 @@
   <header>
     <nav class="nav_btns">
       <button class="button" data-modal="articleModal">Ajouter un article</button>
+      
+      <form action="log_out.php" method="post">
+      <button type="submit" id="log_out">X</button>
+      </form>
+      
+      <button class="button" data-modal="loginModal">S'identifier</button>
       <button class="button btn-black" data-modal="signupModal">Créer un utilisateur</button>
     </nav>
   </header>
@@ -23,7 +35,8 @@
                 <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
             </div>
         </header>
-        <section class="list_art" id="article-container"> 
+        <section class="list_art" id="article-container">
+          <?php include 'display_art.php'; ?>
         </section>
 
         <footer>
@@ -35,10 +48,22 @@
     <div class="modal" id="articleModal">
       <span class="close-btn">&times;</span>
       <h2>Ajouter un article</h2>
-      <form action="add_article.php" method="post">
-        <input type="text" name="title" placeholder="Titre" required>
-        <textarea name="content" placeholder="Contenu de l'article" required></textarea>
+      <form action="add_article.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="titre" placeholder="Titre" required>
+        <textarea name="texte" placeholder="Contenu de l'article" required></textarea>
+        <label for="photo" id="photo label">Choisissez un fichier:</label>
+        <input type="file" name="photo" id="photo_input">
         <button type="submit">Publier</button>
+      </form>
+    </div>
+
+    <div class="modal" id="loginModal">
+      <span class="close-btn">&times;</span>
+      <h2>Connexion</h2>
+      <form action="login.php" method="post">
+        <input type="text" name="login" placeholder="Nom d'utilisateur" required>
+        <input type="password" name="PW" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
       </form>
     </div>
 

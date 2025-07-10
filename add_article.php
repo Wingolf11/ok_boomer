@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssssi", $titre, $date, $photoPath, $texte, $id_user);
 
     if ($stmt->execute()) {
-        echo "Article ajouté avec succès.";
+        header("Location: index.php");       
     } else {
         echo "Erreur lors de l'ajout : " . $stmt->error;
     }

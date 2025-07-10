@@ -24,7 +24,8 @@
                 <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
             </div>
         </header>
-        <section class="list_art" id="article-container"> 
+        <section class="list_art" id="article-container">
+          <?php include 'display_art.php'; ?>
         </section>
 
         <footer>
