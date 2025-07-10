@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'data_b.php';
+require 'config/data_b.php';
 
 $success = '';
 $error = '';
@@ -44,45 +44,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-
-
-<!DOCTYPE html>
-<html>
-        <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>S'inscrire</title>
-        <link rel="stylesheet" href="style/signup_style.css"/>
-    </head>
-    <body>
-        <section id="signup">
-            <div>
-                <h1>S'inscrire</h1>
-                <form method="post">
-                    <label for="login">Identifiant</label>
-                    <input type="text" name="login" placeholder="Identifiant" required>
-                    <br>
-                    <br>
-                    <label for="PW">Mot de passe</label>
-                    <input type="password" name="PW" placeholder="Mot de passe" required>
-                    <br>
-                    <br>
-                    <label for="libelle_role">Role</label>
-                    <select id="libelle_role" name="libelle_role" required>
-                        <option valuer="" selected>Choisissez un rôle</option>
-                        <option value="superadmin">Super admin</option>
-                        <option value="admin">Admin</option>
-                        <option value="editeur">Editeur</option>
-                        <option value="lecteur">Lecteur</option>
-                    </select>
-                    <br>
-                    <br>
-                    <button type="submit" name="sub">S'inscrire</button>
-                </form>
-                <a href="login.php" calss="go_login" title="Revenir sur l'identification"><button id="login_btn">S'identifier</button></a>
-            </div>
-        </section>
-    </body>
-</html>

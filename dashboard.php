@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ok boomer</title>
-    <link rel="stylesheet" href="style/index_style.css" />
-    </head>
-    <body>
-        <header>
-            <nav class= "nav_btns">
-                <a href="add_article_form.php" class="button">Ajouter un article</a>
-                <a href="login.php" class="button">S'identifier</a>
-                <a href="signup.php" class="button btn-black">Créer un utilisateur</a>
-            </nav>
-            <div class="header_img">
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ok Boomer</title>
+<link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+
+  <header>
+    <nav class="nav_btns">
+      <button class="button" data-modal="articleModal">Ajouter un article</button>
+      <button class="button btn-black" data-modal="signupModal">Créer un utilisateur</button>
+    </nav>
+  </header>
+  <div class="header_img">
                 <img src="uploads/header_img.jpg" alt="Header Image">
             </div>
             <div class="welcome">
@@ -24,9 +25,42 @@
         </header>
         <section class="list_art" id="article-container"> 
         </section>
+
         <footer>
             <p>&copy; 2025 Ok Boomer</p>
         </footer>
-        <script src="articles.js" defer></script>
-    </body>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="articleModal">
+      <span class="close-btn">&times;</span>
+      <h2>Ajouter un article</h2>
+      <form action="add_article.php" method="post">
+        <input type="text" name="title" placeholder="Titre" required>
+        <textarea name="content" placeholder="Contenu de l'article" required></textarea>
+        <button type="submit">Publier</button>
+      </form>
+    </div>
+
+    <div class="modal" id="signupModal">
+      <span class="close-btn">&times;</span>
+      <h2>Créer un utilisateur</h2>
+      <form action="signup.php" method="post">
+        <input type="text" name="login" placeholder="Nom d'utilisateur" required>
+        <input type="password" name="PW" placeholder="Mot de passe" required>
+        <select id="libelle_role" name="libelle_role" required>
+            <option valuer="" selected>Choisissez un rôle</option>
+            <option value="superadmin">Super admin</option>
+            <option value="admin">Admin</option>
+            <option value="editeur">Editeur</option>
+            <option value="lecteur">Lecteur</option>
+        </select>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="JS/modals.js"></script>
+
+</body>
 </html>

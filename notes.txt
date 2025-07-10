@@ -10,6 +10,8 @@
     The index.php  will be our home page. 
 6. php uses assosiatives arrays contrary to C which are indexed arrays.  
 
+7. huge mistake: grey boxes not a whole new page.
+
 
 
 Posible mvc layout:

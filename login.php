@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'data_b.php';
+require 'config/data_b.php';
 
 $error = '';
 
@@ -27,45 +27,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Connexion</title>
-        <link rel="stylesheet" href="style/login_style.css" />
-    </head>
-    <body>
-        <section id="log_form">
-            <div>
-                <h1>S'identifier</h1>
-
-                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($error)): ?>
-                    <p class="error-message"><?= htmlspecialchars($error) ?></p>
-                <?php endif; ?>
-
-                <form method="post">
-                    <label for="login">Indentifiant: </label>
-                    <input type="text" id="login" name="login" placeholder="Indentifiant" maxlength="20" required>
-                    
-                    <br>
-                    <br>
-
-                    <label for="PW">Mot de passe:</label>
-                    <input type="password" id="PW" name="PW" placeholder="Mot de passe" maxlength="20" required>
-
-                    <br>
-                    <br>
-
-                    <button type="submit" name="sub" id="login_btn">S'identifier</button>
-                </form>
-                <a href="signup.php" class="signup_btn"><button id="signup_btn">Créer un compte</button></a>
-            </div>
-        </section>
-    </body>
-</html>

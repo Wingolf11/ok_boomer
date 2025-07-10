@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'data_b.php';
+require 'config/data_b.php';
 
 header('Content-Type: application/json');
 

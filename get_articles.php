@@ -1,5 +1,5 @@
 <?php
-require 'data_b.php';
+require 'config/data_b.php';
 
 $stmt = $conn->prepare("SELECT a.id_article, a.titre, a.date, a.photo, a.texte, u.login 
                         FROM articles a 
