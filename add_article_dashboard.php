@@ -5,10 +5,10 @@ require 'config/data_b.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titre = trim($_POST['titre']);
     $texte = trim($_POST['texte']);
-    $id_user = $_SESSION['id_user']; // Fixed user ID
+    $id_user = $_SESSION['id_user'];
     $date = date('Y-m-d H:i:s');
 
-    // Predetermined photo path (replace with your actual default image)
+    // Predetermined photo path
     $photoPath = 'uploads/header_img.jpg';
 
     // Insert into DB
