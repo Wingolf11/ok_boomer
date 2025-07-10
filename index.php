@@ -36,9 +36,9 @@
     <div class="modal" id="articleModal">
       <span class="close-btn">&times;</span>
       <h2>Ajouter un article</h2>
-      <form action="add_article.php" method="post">
-        <input type="text" name="title" placeholder="Titre" required>
-        <textarea name="content" placeholder="Contenu de l'article" required></textarea>
+      <form action="add_article.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="titre" placeholder="Titre" required>
+        <textarea name="texte" placeholder="Contenu de l'article" required></textarea>
         <label for="photo" id="photo label">Choisissez un fichier:</label>
         <input type="file" name="photo" id="photo_input">
         <button type="submit">Publier</button>
