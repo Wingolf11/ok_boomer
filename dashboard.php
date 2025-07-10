@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,6 +23,12 @@
       
       <button class="button" data-modal="loginModal">S'identifier</button>
       <button class="button btn-black" data-modal="signupModal">Créer un utilisateur</button>
+      <?php
+      if(isset($_SESSION['role']) && $_SESSION['role'] === 'superadmin')
+        echo "<td>
+              <button class='button btn-black' data-modal='userlistmodal'>Supprimer un utilisateur</button>
+              </td>";
+      ?>
     </nav>
   </header>
   <div class="header_img">
@@ -76,6 +86,11 @@
         </select>
         <button type="submit">S'inscrire</button>
       </form>
+    </div>
+    <div class="modal" id="userlistmodal">
+      <span class="close-btn">&times;</span>
+      <h2>Supprimer un utilisateur</h2>
+      <?php include 'display_users.php'; ?>
     </div>
   </div>
 
