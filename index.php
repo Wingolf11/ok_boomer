@@ -9,27 +9,26 @@
 </head>
 <body>
 
-  <header>
-    <nav class="nav_btns">
-      <button class="button" data-modal="articleModal">Ajouter un article</button>
-      <button class="button" data-modal="loginModal">S'identifier</button>
-    </nav>
-  </header>
-  <div class="header_img">
-                <img src="uploads/header_img.jpg" alt="Header Image">
-            </div>
-            <div class="welcome">
-                <h1>Ok Boomer!</h1> 
-                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
-            </div>
-        </header>
-        <section class="list_art" id="article-container">
-          <?php include 'display/display_art.php'; ?>
-        </section>
+<header>
+  <nav class="nav_btns">
+    <button class="button" data-modal="articleModal">Ajouter un article</button>
+    <button class="button" data-modal="loginModal">S'identifier</button>
+  </nav>
+<div class="header_img">
+  <img src="uploads/header_img.jpg" alt="Header Image">
+  <div class="welcome">
+    <h1>Ok Boomer!</h1> 
+      <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quasi, quibusdam autem nemo vel expedita minus voluptatibus, enim laboriosam optio debitis nesciunt magnam atque nam ipsam. Ad sint quod dolor!</p>
+  </div>
+</div>
+</header>
+<section class="list_art" id="article-container">
+  <?php include 'display/display_art.php'; ?>
+</section>
 
-        <footer>
-            <p>&copy; 2025 Ok Boomer</p>
-        </footer>
+<footer>
+  <p>&copy; 2025 Ok Boomer</p>
+</footer>
 
   <!-- Modals -->
   <div class="modal-overlay" id="modalOverlay">
