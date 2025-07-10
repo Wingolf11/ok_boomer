@@ -39,6 +39,8 @@
       <form action="add_article.php" method="post">
         <input type="text" name="title" placeholder="Titre" required>
         <textarea name="content" placeholder="Contenu de l'article" required></textarea>
+        <label for="photo" id="photo label">Choisissez un fichier:</label>
+        <input type="file" name="photo" id="photo_input">
         <button type="submit">Publier</button>
       </form>
     </div>
