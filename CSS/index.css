@@ -121,6 +121,7 @@ header {
   border-collapse: collapse;
 }
 
+/* PHOTO on the left */
 .article-card {
   display: flex;
   background-color: #ffffff;
@@ -137,7 +138,6 @@ header {
     transform: translateY(-5px); 
 }
 
-/* PHOTO on the left */
 .card-photo img {
   width: 200px;
   height: 100%;
@@ -222,6 +222,9 @@ footer {
   border-radius: 2rem 2rem 0 0;
 }
 
+
+
+/*modals*/
 
 .modal-overlay {
       display: none;
