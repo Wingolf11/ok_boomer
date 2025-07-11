@@ -19,14 +19,14 @@ if (!$result) {
 }
 
 // Display results
-echo "<table class='table' cellpadding='5' cellspacing='0'>";
+echo "<table class='table' cellpadding='5' cellspacing='10'>";
 while ($row = $result->fetch_assoc()) {
     echo "<tr>
-        <td><img src='" . htmlspecialchars($row['photo']) . "' alt='Photo' width='200'></td>
-        <td>" . htmlspecialchars($row['titre']) . "</td>
-        <td>" . nl2br(htmlspecialchars($row['texte'])) . "</td>
-        <td>" . htmlspecialchars($row['date']) . "</td>
-        <td>" . htmlspecialchars($row['login']) . "</td>";
+        <td id='photo'><img src='" . htmlspecialchars($row['photo']) . "' alt='Photo' width='200'></td>
+        <td id='titre'>" . htmlspecialchars($row['titre']) . "</td>
+        <td id='texte'>" . nl2br(htmlspecialchars($row['texte'])) . "</td>
+        <td id='date'>" . htmlspecialchars($row['date']) . "</td>
+        <td id='login'>" . htmlspecialchars($row['login']) . "</td>";
 
     // Check role-based delete permission
     $canDelete = false;
@@ -38,10 +38,10 @@ while ($row = $result->fetch_assoc()) {
     }
 
     if ($canDelete) {
-        echo "<td>
+        echo "<td id='delete_btn'>
                 <form method='post' action='handlers/delete_article.php' onsubmit='return confirm(\"Supprimer cet article ?\");'>
                     <input type='hidden' name='id_article' value='" . $row['id_article'] . "'>
-                    <button type='submit' class='delete-btn'>Supprimer</button>
+                    <button class='button' type='submit' class='delete-btn'>Supprimer</button>
                 </form>
               </td>";
     } else {
