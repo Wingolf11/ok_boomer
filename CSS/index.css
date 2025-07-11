@@ -158,7 +158,7 @@ header {
 
 /* Delete button */
 .delete_button {
-  background-color: #e74c3c;
+  background-color: #424242;
   color: white;
   padding: 8px 12px;
   border: none;
@@ -167,8 +167,8 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
-  background-color: #c0392b;
+.delete_button:hover {
+  background-color: #e24f3e;
 }
 
 
