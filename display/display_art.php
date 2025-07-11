@@ -41,7 +41,7 @@ while ($row = $result->fetch_assoc()) {
         echo "<td id='delete_btn'>
                 <form method='post' action='handlers/delete_article.php' onsubmit='return confirm(\"Supprimer cet article ?\");'>
                     <input type='hidden' name='id_article' value='" . $row['id_article'] . "'>
-                    <button class='button' type='submit' class='delete-btn'>Supprimer</button>
+                    <button class='delete_button' type='submit' class='delete-btn'>Supprimer</button>
                 </form>
               </td>";
     } else {

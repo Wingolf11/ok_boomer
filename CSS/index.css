@@ -157,7 +157,7 @@ header {
 }
 
 /* Delete button */
-.button {
+.delete_button {
   background-color: #e74c3c;
   color: white;
   padding: 8px 12px;
@@ -223,5 +223,3 @@ footer {
       font-size: 1em;
     }
   
-
-/*Articles section*/
