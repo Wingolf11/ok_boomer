@@ -11,8 +11,8 @@
 
 <header>
   <nav class="nav_btns">
-    <button class="button" data-modal="articleModal">Ajouter un article</button>
-    <button class="button" data-modal="loginModal">S'identifier</button>
+    <button class="button" data-modal="articleModal">AJOUTER UN ARTICLE</button>
+    <button class="button" data-modal="loginModal">S'IDENTIFIER</button>
   </nav>
 <div class="header_img">
   <img src="uploads/header_img.jpg" alt="Header Image">
