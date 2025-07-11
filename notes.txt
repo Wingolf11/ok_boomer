@@ -32,5 +32,3 @@ Posible mvc layout:
 │
 ├── /config
 │     └── db.php               <-- DB connection
-│
-└── .htaccess                  <-- URL rewriting (optional)
